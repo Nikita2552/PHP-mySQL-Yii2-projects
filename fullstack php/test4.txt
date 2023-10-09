@@ -1,0 +1,18 @@
+
+1) SELECT `name` FROM `users` INNER JOIN `orders` ON `users`.`id` = `orders`.`user_id` GROUP BY `user_id` HAVING COUNT(`user_id`)
+
+2) SELECT `products`.`name`, `catalogs`.`name` FROM `products` INNER JOIN `catalogs` ON `products`.`catalog_id` = `catalogs`.`id`
+
+3) START TRANSACTION;
+SELECT @TNAME:=`shop`.`users`.`name`, @TBITHDAY_AT:=`shop`.`users`.`birthday_at`, @TCREATED_AT:=`shop`.`users`.`created_at`, @TUPDATED_AT:=`shop`.`users`.`updated_at` FROM `shop`.`users` WHERE `shop`.`users`.`id` = 1;
+INSERT INTO `sample`.`users`(`name`, `birthday_at`, `created_at`, `updated_at`) VALUES(@TNAME, @TBITHDAY_AT, @TCREATED_AT, @TUPDATED_AT);
+COMMIT;
+
+4) SELECT `users`.`name`, `users`.`birthday_at`, `orders`.`created_at`, `users`.`id`, `orders`.`id` 
+	FROM `shop`.`users` 
+	INNER JOIN `shop`.`orders` 
+	ON `users`.`id` = `orders`.`user_id` 
+	WHERE (YEAR(CURRENT_DATE()) - YEAR(`shop`.`users`.`birthday_at`)) > 30
+	AND (MONTH(CURRENT_DATE()) - MONTH(`shop`.`orders`.`created_at`)) <= 6
+	ORDER BY RAND() LIMIT 1
+

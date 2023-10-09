@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<!-- служебная часть -->
+
+<head>
+  <!-- заголовок страницы -->
+  <title>Адаптивная вёрстка на Бутстрапе</title>
+  <!-- настраиваем служебную информацию для браузеров -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- загружаем Бутстрап -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style type="text/css">
+  img {
+      max-width: 100%;
+    }	
+}
+  </style>
+  <!-- закрываем служебную часть страницы -->
+</head>
+
+<body>
+
+<script type="text/javascript" src="temp/script.js"></script>
+<!-- тут будет наша страница -->
+  <div class="container" >
+  <div class="row">
+    <div class="col-12">
+      <h2>Олимпиада</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
+      <img src="temp/cat1.jpg">
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8">
+      <img src="temp/cat2.jpg">
+	  <div class="form-group">
+		<label for="inputUnits" class="control-label col-xs-2">Участники</label>
+		<div class="col-xs-10">
+		  <input type="text" class="form-control" id="maintext" placeholder="Введите имена участников через запятую">
+		</div>
+	  </div>	  
+	  <div class="form-group">
+		<div class="col-xs-10">
+		  <button onclick="myFunction()" class="btn btn-primary">Добавить</button>
+		</div>
+	  </div>
+		<div id = "demotable" style="display:none">
+			<table class="table table-bordered"  id="maintable">
+			  <thead>
+				<tr>
+				  <th scope="col">id</th>
+				  <th scope="col">Имя</th>
+				  <th scope="col">Очки</th>
+				</tr>
+			  </thead>
+			  <tbody>				
+			  </tbody>
+			</table>
+		</div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
+      <img src="temp/cat3.jpg">
+    </div>
+  </div>
+ </div>
+
+</body>
+</html>
